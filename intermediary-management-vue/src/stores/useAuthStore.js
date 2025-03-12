@@ -1,28 +1,18 @@
-import { defineStore } from 'pinia';
-import authService from '@/services/authService';
+import axios from 'axios';
 
-export const useAuthStore = defineStore('auth', {
-    state: () => ({
-        user: null,
-        token: localStorage.getItem('token') || null
-    }),
+const API_BASE = 'http://localhost/login'; // 去掉端口号
 
-    actions: {
-        async login(credentials) {
-            const response = await authService.login(credentials);
-            this.user = response.user;
-            this.token = response.token;
-            localStorage.setItem('token', response.token);
-        },
-
-        logout() {
-            this.user = null;
-            this.token = null;
-            localStorage.removeItem('token');
+export default {
+    login: async (credentials) => {
+        try {
+            const response = await axios.post(`${API_BASE}/auth`, credentials);
+            return response.data;
+        } catch (error) {
+            throw new Error(error.response?.data?.message || '登录失败');
         }
     },
 
-    getters: {
-        isAuthenticated: (state) => !!state.token
+    logout: async () => {
+        // 登出逻辑...
     }
-});
+};

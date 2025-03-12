@@ -11,10 +11,13 @@
     "@pinia/nuxt": "^0.10.1",
     "@vue/compiler-sfc": "^3.4.0",
     "axios": "^1.8.2",
+    "element-plus": "^2.9.6",
+    "jwt-decode": "^4.0.0",
     "pinia": "^3.0.1",
     "vue": "^3.4.0",
     "vue-loader": "^17.4.1",
-    "vue-router": "^4.3.0"
+    "vue-router": "^4.3.0",
+    "vuex": "^4.1.0"
   },
   "eslintConfig": {
     "root": true,
@@ -33,7 +36,6 @@
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
-    "@vitejs/plugin-vue": "^5.0.4",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",

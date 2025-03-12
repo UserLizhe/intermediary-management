@@ -13,14 +13,9 @@ public class ILoginService extends ServiceImpl<LoginMapper, User> implements Log
     private LoginMapper loginMapper;
 
     @Override
-    public boolean login(User user) {
+    public User login(User user) {
         User user1 = loginMapper.login(user);
-        boolean isT;
-        if (user1!=null){
-            isT=false;
-        }else {
-            isT=true;
-        }
-        return isT;
+        return user1;
     }
+
 }

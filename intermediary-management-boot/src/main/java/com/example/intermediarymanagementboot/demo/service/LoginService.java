@@ -4,6 +4,6 @@ import com.example.intermediarymanagementboot.demo.entity.User;
 
 public interface LoginService extends IService<User> {
 
-    boolean login(User user);
+    User login(User user);
 
 }
