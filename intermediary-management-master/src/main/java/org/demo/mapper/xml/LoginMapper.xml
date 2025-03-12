@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.demo.mapper.LoginMapper">
+    <select id="login" resultType="org.demo.entity.User">
+        SELECT u.*, r.role_name as role
+        FROM users u
+                 LEFT JOIN roles r ON u.role_id = r.id
+        WHERE u.username = #{username} AND u.password = #{password}
+    </select>
+</mapper>
