@@ -19,6 +19,7 @@ public class BasicJwtFilter extends OncePerRequestFilter {
                                     FilterChain chain) throws IOException, ServletException {
         String token = request.getHeader("Authorization");
         if (token != null && token.startsWith("Bearer ")) {
+//            test
             token = token.substring(7);
             // 仅检查 Token 是否存在，不验证签名和过期时间
             Authentication authentication = new UsernamePasswordAuthenticationToken(
